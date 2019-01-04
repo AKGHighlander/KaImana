@@ -35,8 +35,7 @@ MAGENTA
 ORANGE 
 */
 
-#define _IDLE_COLOR GREEN
-
+#define _IDLE_COLOR WHITE
 
 /*
 ##ON PRESS BUTTON COLOR##
