@@ -103,11 +103,11 @@ void defaultStartup(void)
 {
   kaimana.setALL( BLACK );
   delay( FAST_COLOR_DELAY );
-  kaimana.setALL( RED );
+  kaimana.setALL( PURPLE );
   delay( FAST_COLOR_DELAY );
   kaimana.setALL( BLACK );
   delay( FAST_COLOR_DELAY );
-  kaimana.setALL( GREEN );
+  kaimana.setALL( WHITE );
   delay( FAST_COLOR_DELAY );
   kaimana.setALL( BLACK );
   delay( FAST_COLOR_DELAY );
@@ -341,7 +341,7 @@ int animation_idle(void)
 }
 
 
-// Hadouken (Fireball)
+// PEWGF
 //
 void animation_combo_1(void)
 {
@@ -447,29 +447,75 @@ void animation_combo_1(void)
     kaimana.updateALL();
 
     // slow down the fireball animation
-    delayMicroseconds( FIREBALL_DELAY );
+    delayMicroseconds(1500);
 
-    counter -= 4;
+    counter -= 8;
   }
 
   kaimana.setALL( BLACK );
 }
 
 
-// Shoryuken (Dragon Punch)
+// KBDC
 //
 void animation_combo_2(void)
 {
   kaimana.setALL(BLACK);
 
-  kaimana.setALL(RED);
-  delay(2000);
+ kaimana.setLED( LED_LEFT, BLUE );
+   delay(25);
+   kaimana.updateALL();
+ kaimana.setLED( LED_UP, BLUE );
+   delay(25);
+   kaimana.updateALL();
+ kaimana.setLED( LED_RIGHT, BLUE );
+   delay(25);
+   kaimana.updateALL();
+ kaimana.setLED( LED_DOWN, BLUE );
+   delay(25);
+   kaimana.updateALL();
 
-  kaimana.setALL(BLACK);
+ kaimana.setLED( LED_LEFT, PURPLE );
+   delay(25);
+   kaimana.updateALL();
+ kaimana.setLED( LED_UP, PURPLE );
+   delay(25);
+   kaimana.updateALL();
+ kaimana.setLED( LED_RIGHT, PURPLE );
+   delay(25);
+   kaimana.updateALL();
+ kaimana.setLED( LED_DOWN, PURPLE );
+
+
+  kaimana.setLED( LED_LEFT, RED );
+   delay(25);
+   kaimana.updateALL();
+ kaimana.setLED( LED_UP, RED );
+   delay(25);
+   kaimana.updateALL();
+ kaimana.setLED( LED_RIGHT, RED );
+   delay(25);
+   kaimana.updateALL();
+ kaimana.setLED( LED_DOWN, RED );
+   delay(25);
+
+ kaimana.setLED( LED_LEFT, BLACK );
+   delay(25);
+   kaimana.updateALL();
+ kaimana.setLED( LED_UP, BLACK );
+   delay(25);
+   kaimana.updateALL();
+ kaimana.setLED( LED_RIGHT, BLACK );
+   delay(25);
+   kaimana.updateALL();
+ kaimana.setLED( LED_DOWN, BLACK );
+   delay(25);
+   kaimana.updateALL();   
+   
 }
 
 
-// Tatsumaki Senpukyaku (Hurricane Kick)
+// JFSR
 //
 void animation_combo_3(void)
 {
@@ -502,28 +548,28 @@ void animation_combo_3(void)
    kaimana.updateALL();
 
 
- kaimana.setLED( LED_K1, GREEN );
+ kaimana.setLED( LED_K1, PURPLE );
    delay(25);
    kaimana.updateALL();
- kaimana.setLED( LED_K2, GREEN );
+ kaimana.setLED( LED_K2, PURPLE );
    delay(25);
    kaimana.updateALL();
- kaimana.setLED( LED_K3, GREEN );
+ kaimana.setLED( LED_K3, PURPLE );
    delay(25);
    kaimana.updateALL();
- kaimana.setLED( LED_K4, GREEN );
+ kaimana.setLED( LED_K4, PURPLE );
    delay(25);
    kaimana.updateALL();
- kaimana.setLED( LED_P4, GREEN );
+ kaimana.setLED( LED_P4, PURPLE );
    delay(25);
    kaimana.updateALL();
- kaimana.setLED( LED_P3, GREEN );
+ kaimana.setLED( LED_P3, PURPLE );
    delay(25);
    kaimana.updateALL();
- kaimana.setLED( LED_P2, GREEN );
+ kaimana.setLED( LED_P2, PURPLE );
    delay(25);
    kaimana.updateALL();
- kaimana.setLED( LED_P1, GREEN );
+ kaimana.setLED( LED_P1, PURPLE );
    delay(25);
    kaimana.updateALL();
 
@@ -581,7 +627,7 @@ void animation_combo_3(void)
 }
 
 
-// Super (Shinkuu Hadouken)
+// TEMPORARY f,f+4
 //
 void animation_combo_4(void)
 {
@@ -594,20 +640,37 @@ void animation_combo_4(void)
 }
 
 
-// Ultra 1 (Metsu Hadouken)
-//
+// 
+// EWGF
 void animation_combo_5(void)
 {
   kaimana.setALL(BLACK);
 
+  kaimana.setALL(BLUE);
+  delay(100);
+
+  kaimana.setALL(BLACK);
+ delay(100);
+
   kaimana.setALL(PURPLE);
-  delay(2000);
+  delay(100);
+
+  kaimana.setALL(BLACK);
+
+  kaimana.setALL(BLUE);
+  delay(100);
+
+  kaimana.setALL(BLACK);
+ delay(100);
+
+  kaimana.setALL(PURPLE);
+  delay(100);
 
   kaimana.setALL(BLACK);
 }
 
 
-// Ultra 2 (Metsu Shoryuken)
+// OTGF
 //
 void animation_combo_6(void)
 {
@@ -628,28 +691,28 @@ void animation_combo_6(void)
   delay(80);
 
 
-  kaimana.setALL(WHITE);
+  kaimana.setALL(BLUE);
   delay(60);
 
   kaimana.setALL(BLACK);
   delay(60);
 
 
-  kaimana.setALL(WHITE);
+  kaimana.setALL(BLUE);
   delay(40);
 
   kaimana.setALL(BLACK);
   delay(40);
 
 
-  kaimana.setALL(WHITE);
+  kaimana.setALL(PURPLE);
   delay(20);
 
   kaimana.setALL(BLACK);
   delay(20);
 
 
-  kaimana.setALL(WHITE);
+  kaimana.setALL(PURPLE);
   delay(10);
 
   kaimana.setALL(BLACK);
