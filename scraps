@@ -1,0 +1,125 @@
+
+put in animations.h
+
+#define FIREBALL_OFFSET_8   768    // IF IT FAILS CUT FROM HERE AND CHANGE TOP VALUE TO 768
+#define FIREBALL_OFFSET_7   672
+#define FIREBALL_OFFSET_6   576
+#define FIREBALL_OFFSET_5   480
+#define FIREBALL_OFFSET_4   384
+
+#define FIREBALL_SIZE       768    // size of animation array
+#define FIREBALL_OFFSET_3   288    // used to create animation -- see code
+#define FIREBALL_OFFSET_2   192    // used to create animation -- see code
+#define FIREBALL_OFFSET_1    96    // used to create animation -- see code
+#define FIREBALL_DELAY      350    // value in microseconds
+
+put in animations.cpp
+   // P3 & K3 IF IT FAILS CUT FROM HERE
+    if( ((counter+(FIREBALL_OFFSET_4)) < 768) && ((counter+(FIREBALL_OFFSET_4)) >= 0) )
+    {
+      kaimana.setLED(
+        LED_P3,
+        0,  // no red just cyan used for fireball
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_4))%FIREBALL_SIZE]),
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_4))%FIREBALL_SIZE])
+      );
+      kaimana.setLED(
+        LED_K3,
+        0,  // no red just cyan used for fireball
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_4))%FIREBALL_SIZE]),
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_4))%FIREBALL_SIZE])
+      );
+    }
+    else
+    {
+      kaimana.setLED( LED_P3, BLACK );
+      kaimana.setLED( LED_K3, BLACK );
+    }
+    
+        // P2 & K2
+    if( ((counter+(FIREBALL_OFFSET_5)) < FIREBALL_SIZE) && ((counter+(FIREBALL_OFFSET_5)) >= 0) )
+    {
+      kaimana.setLED(
+        LED_P2,
+        0,  // no red just cyan used for fireball
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_5))%FIREBALL_SIZE]),
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_5))%FIREBALL_SIZE])
+      );
+      kaimana.setLED(
+        LED_K2,
+        0,  // no red just cyan used for fireball
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_5))%FIREBALL_SIZE]),
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_5))%FIREBALL_SIZE])
+      );
+    }
+    else
+    {
+      kaimana.setLED( LED_P2, BLACK );
+      kaimana.setLED( LED_K2, BLACK );
+    }
+        // P1 & K1
+    if( ((counter+(FIREBALL_OFFSET_6)) < FIREBALL_SIZE) && ((counter+(FIREBALL_OFFSET_6)) >= 0) )
+    {
+      kaimana.setLED(
+        LED_P1,
+        0,  // no red just cyan used for fireball
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_6))%FIREBALL_SIZE]),
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_6))%FIREBALL_SIZE])
+      );
+      kaimana.setLED(
+        LED_K1,
+        0,  // no red just cyan used for fireball
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_6))%FIREBALL_SIZE]),
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_6))%FIREBALL_SIZE])
+      );
+    }
+    else
+    {
+      kaimana.setLED( LED_P1, BLACK );
+      kaimana.setLED( LED_K1, BLACK );
+    }
+
+        // RIGHT & DOWN
+    if( ((counter+(FIREBALL_OFFSET_7)) < FIREBALL_SIZE) && ((counter+(FIREBALL_OFFSET_7)) >= 0) )
+    {
+      kaimana.setLED(
+        LED_RIGHT,
+        0,  // no red just cyan used for fireball
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_7))%FIREBALL_SIZE]),
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_7))%FIREBALL_SIZE])
+      );
+      kaimana.setLED(
+        LED_DOWN,
+        0,  // no red just cyan used for fireball
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_7))%FIREBALL_SIZE]),
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_7))%FIREBALL_SIZE])
+      );
+    }
+    else
+    {
+      kaimana.setLED( LED_RIGHT, BLACK );
+      kaimana.setLED( LED_DOWN, BLACK );
+    }
+
+        // P2 & K2
+    if( ((counter+(FIREBALL_OFFSET_8)) < FIREBALL_SIZE) && ((counter+(FIREBALL_OFFSET_8)) >= 0) )
+    {
+      kaimana.setLED(
+        LED_LEFT,
+        0,  // no red just cyan used for fireball
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_8))%FIREBALL_SIZE]),
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_8))%FIREBALL_SIZE])
+      );
+      kaimana.setLED(
+        LED_UP,
+        0,  // no red just cyan used for fireball
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_8))%FIREBALL_SIZE]),
+        pgm_read_byte_near(&colorCycleData[(counter+(FIREBALL_OFFSET_8))%FIREBALL_SIZE])
+      );
+    }
+    else
+    {
+      kaimana.setLED( LED_LEFT, BLACK );
+      kaimana.setLED( LED_UP, BLACK );
+    }
+
