@@ -101,9 +101,9 @@ void showStartup(void)
 {
   kaimana.setALL( BLACK );
   delay( BOOT_COLOR_DELAY );
-  kaimana.setALL( RED );
+  kaimana.setALL( PURPLE );
   delay( BOOT_COLOR_DELAY );
-  kaimana.setALL( GREEN );
+  kaimana.setALL( WHITE );
   delay( BOOT_COLOR_DELAY );
   kaimana.setALL( BLUE );
   delay( BOOT_COLOR_DELAY );
@@ -287,7 +287,7 @@ int pollSwitches(void)
   else
   {
       // switch is inactive
-      kaimana.setLED(LED_HOME, BLUE);    
+      kaimana.setLED(LED_HOME, BLACK);    
       iLED[LED_HOME] = false;
   }
 
@@ -311,7 +311,7 @@ int pollSwitches(void)
   else
   {
       // switch is inactive
-      kaimana.setLED(LED_SELECT, WHITE);    
+      kaimana.setLED(LED_SELECT, BLACK);    
       iLED[LED_SELECT] = false;
   }
 
@@ -335,7 +335,7 @@ int pollSwitches(void)
   else
   {
       // switch is inactive
-      kaimana.setLED(LED_START, WHITE);    
+      kaimana.setLED(LED_START, BLACK);    
       iLED[LED_START] = false;
   }
 
@@ -393,7 +393,7 @@ int pollSwitches(void)
 
 
   // test switch and set LED based on result
-  if(!digitalRead(PIN_P3))
+  if(!digitalRead(PIN_LEFT))
   {
     switchActivity |= ATTACK_P3;
     
@@ -560,33 +560,33 @@ int pollSwitches(void)
 
   // combo #6
   // test for: OTGF
-  // combo is: f,n,df+4
+  // combo is: f,n,df+1
   if( kaimana.switchHistoryTest( COMBO_PATTERN_6A ) )
       animation_combo_6();
   if( kaimana.switchHistoryTest( COMBO_PATTERN_6B ) )
       animation_combo_6();
       
   // combo #5
-  // test for: JFSR
-  // combo is: f,n,df+4
+  // test for: EWGF
+  // combo is: f,n,d,df+2
   if( kaimana.switchHistoryTest( COMBO_PATTERN_5A ) )
       animation_combo_5();
   if( kaimana.switchHistoryTest( COMBO_PATTERN_5B ) )
-      animation_combo_4();
+      animation_combo_5();
 
 
 
   // combo #4
-  // test for: EWGF
-  // combo is: f,n,d,df+2
+  // test for: No idea what to do
+  // combo is: 
   if( kaimana.switchHistoryTest( COMBO_PATTERN_4A ) )
       animation_combo_4();
   if( kaimana.switchHistoryTest( COMBO_PATTERN_4B ) )
       animation_combo_4();
 
   // combo #3
-  // test for: Tatsumaki Senpukyaku (Hurricane Kick)
-  // combo is: DOWN, DOWN+LEFT, LEFT, LEFT+K1 or LEFT+K2
+  // test for: JFSR
+  // combo is: f,n,df+4
   if( kaimana.switchHistoryTest( COMBO_PATTERN_3A ) )
       animation_combo_3();
   if( kaimana.switchHistoryTest( COMBO_PATTERN_3B ) )
